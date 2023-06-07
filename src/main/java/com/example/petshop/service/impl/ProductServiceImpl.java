@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.petshop.entity.Category;
@@ -32,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getList() {
         // TODO Auto-generated method stub
-        return productRepository.findAll();
+        return productRepository.findAll(Sort.by("id").descending());
     }
 
     @Override
